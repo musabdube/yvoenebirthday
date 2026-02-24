@@ -25,13 +25,88 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.sticky-stage {
+  position: relative;
+  min-height: 20rem;
+}
+
+.sticky-note {
+  position: absolute;
+  inset: 0;
+  border-radius: 0.85rem;
+  background: linear-gradient(160deg, #fff176, #fef08a 52%, #fde047);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.42);
+}
+
+.sticky-note::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.2rem;
+  height: 2.2rem;
+  clip-path: polygon(0 0, 100% 100%, 100% 0);
+  background: linear-gradient(135deg, #fffde7, #fde047);
+  border-top-right-radius: 0.85rem;
+}
+
+.shadow-note-1 {
+  transform: rotate(-3deg) translate(-10px, 6px);
+  background: #fef3c7;
+  opacity: 0.88;
+}
+
+.shadow-note-2 {
+  transform: rotate(2.2deg) translate(9px, -3px);
+  background: #fde68a;
+  opacity: 0.82;
+}
+
+.sticky-note-active {
+  z-index: 2;
+  transform: rotate(-0.5deg);
+  animation: sticky-pop 0.45s ease;
+}
+
+.note-tape {
+  position: absolute;
+  top: -0.85rem;
+  width: 4.8rem;
+  height: 1.5rem;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(120, 53, 15, 0.15);
+  border-radius: 0.3rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.note-tape-left {
+  left: 1.3rem;
+  transform: rotate(-12deg);
+}
+
+.note-tape-right {
+  right: 1.3rem;
+  transform: rotate(10deg);
+}
+
+@keyframes sticky-pop {
+  0% {
+    opacity: 0;
+    transform: rotate(-2deg) translateY(12px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-0.5deg) translateY(0) scale(1);
+  }
+}
+
 .confetti-piece {
   position: absolute;
   top: -12%;
-  width: 10px;
-  height: 18px;
+  width: 9px;
+  height: 16px;
   border-radius: 999px;
-  opacity: 0.9;
+  opacity: 0.55;
   animation-name: confetti-fall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
