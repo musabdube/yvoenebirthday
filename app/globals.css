@@ -24,3 +24,53 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.confetti-piece {
+  position: absolute;
+  top: -12%;
+  width: 10px;
+  height: 18px;
+  border-radius: 999px;
+  opacity: 0.9;
+  animation-name: confetti-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.confetti-piece:nth-child(6n + 1) {
+  background: #fb7185;
+}
+
+.confetti-piece:nth-child(6n + 2) {
+  background: #f9a8d4;
+}
+
+.confetti-piece:nth-child(6n + 3) {
+  background: #c084fc;
+}
+
+.confetti-piece:nth-child(6n + 4) {
+  background: #fbbf24;
+}
+
+.confetti-piece:nth-child(6n + 5) {
+  background: #67e8f9;
+}
+
+.confetti-piece:nth-child(6n + 6) {
+  background: #4ade80;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate3d(0, 115vh, 0) rotate(640deg);
+    opacity: 0.12;
+  }
+}
