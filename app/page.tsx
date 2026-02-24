@@ -11,7 +11,7 @@ export default function Home() {
     <div
       className="relative min-h-screen bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage: "url('/image1.jpeg')",
+        backgroundImage: "url('image1.jpeg')",
       }}
     >
       <div className="pointer-events-none absolute inset-0 z-10">
